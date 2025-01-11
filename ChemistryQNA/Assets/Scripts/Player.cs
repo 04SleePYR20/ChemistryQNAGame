@@ -6,11 +6,12 @@ public class Player : MonoBehaviour
 {
     [Header("Player Movement")]
     public float speed = 2.0f;
+    public float jump = 5.0f;
     private float Move;
 
     private Rigidbody2D rb;
 
-    public Animator animator;
+    //public Animator animator;
 
     void Start()
     {
@@ -24,7 +25,12 @@ public class Player : MonoBehaviour
         Debug.Log(Move);
         rb.velocity = new Vector2(Move * speed, rb.velocity.y);
 
-        animator.SetBool("IsWalking", Mathf.Abs(Move) > 0.1f);
+        //animator.SetBool("IsWalking", Mathf.Abs(Move) > 0.1f);
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jump);
+        }
 
         if (Move > 0.1f) // Moving to the right
         {
