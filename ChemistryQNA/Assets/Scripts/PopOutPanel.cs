@@ -8,9 +8,22 @@ public class PopOutPanel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             panel.SetActive(true);
+            Time.timeScale = 0f; // Pause the game
         }
+    }
+
+
+    public void ResumeGame()
+    {
+        panel.SetActive(false);
+        Time.timeScale = 1f; // Resume the game
+    }
+
+    public void RightAnswer()
+    {
+        ResumeGame();
     }
 }

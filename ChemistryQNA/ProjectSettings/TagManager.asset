@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - Enemy
   - Wall
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -17,10 +18,10 @@ TagManager:
   - 
   - 
   - Ground
+  - Ladder
   - Wall
   - Player
   - Enemy
-  - 
   - 
   - 
   - 

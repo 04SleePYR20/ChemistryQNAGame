@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     public float speed = 2.0f;
     public float jump = 5.0f;
     private float Move;
+    private float Climb;
+    private bool isLadder;
+    private bool isClimbing;
 
     private Rigidbody2D rb;
 
@@ -22,6 +25,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move = Input.GetAxis("Horizontal");
+        Climb = Input.GetAxis("Vertical");
+
         Debug.Log(Move);
         rb.velocity = new Vector2(Move * speed, rb.velocity.y);
 
@@ -39,6 +44,41 @@ public class Player : MonoBehaviour
         else if (Move < -0.1f)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+
+        if (isLadder && Mathf.Abs(Climb) > 0.0f)
+        {
+            isClimbing = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (isClimbing)
+        {
+            rb.gravityScale = 0f;
+            rb.velocity = new Vector2(rb.velocity.x, Climb * speed);
+        }
+        else
+        {
+            rb.gravityScale = 1f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Ladder"))
+        {
+            isLadder = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            isLadder = false;
+            isClimbing = false;
         }
     }
 }
