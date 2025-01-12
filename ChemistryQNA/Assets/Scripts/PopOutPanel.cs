@@ -47,9 +47,9 @@ public class PopOutPanel : MonoBehaviour
         }
     }
 
-    public void MainMenu()
+    public void ResetGame()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Level1");
         Time.timeScale = 1f;
     }
 

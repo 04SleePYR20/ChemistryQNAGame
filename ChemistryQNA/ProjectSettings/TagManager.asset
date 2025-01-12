@@ -10,6 +10,7 @@ TagManager:
   - Ladder
   - Death
   - Portal
+  - Audio
   layers:
   - Default
   - TransparentFX
