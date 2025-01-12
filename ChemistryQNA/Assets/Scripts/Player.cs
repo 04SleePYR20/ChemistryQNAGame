@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
     [Header("Player Movement")]
-    public float speed = 2.0f;
-    public float jump = 5.0f;
+    public float speed = 5.0f;
     private float Move;
     private float Climb;
     private bool isLadder;
@@ -27,15 +28,9 @@ public class Player : MonoBehaviour
         Move = Input.GetAxis("Horizontal");
         Climb = Input.GetAxis("Vertical");
 
-        Debug.Log(Move);
         rb.velocity = new Vector2(Move * speed, rb.velocity.y);
 
         //animator.SetBool("IsWalking", Mathf.Abs(Move) > 0.1f);
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jump);
-        }
 
         if (Move > 0.1f) // Moving to the right
         {
@@ -67,9 +62,17 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Ladder"))
+        if (collision.CompareTag("Ladder"))
         {
             isLadder = true;
+        }
+        else if (collision.CompareTag("Death"))
+        {
+            ResetScene();
+        }
+        else if (collision.CompareTag("Portal"))
+        {
+            NextScene();
         }
     }
 
@@ -81,4 +84,23 @@ public class Player : MonoBehaviour
             isClimbing = false;
         }
     }
+
+    private void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void NextScene()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("No more scenes to load. This is the last scene.");
+        }
+    }
+
 }

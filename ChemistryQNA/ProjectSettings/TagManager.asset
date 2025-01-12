@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Wall
   - Ladder
+  - Death
+  - Portal
   layers:
   - Default
   - TransparentFX
@@ -44,4 +46,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1753784219
+    locked: 0
+  - name: Ladder
+    uniqueID: 1415888363
+    locked: 0
+  - name: Player
+    uniqueID: 2509585831
+    locked: 0
+  - name: Ground
+    uniqueID: 2253103577
     locked: 0
