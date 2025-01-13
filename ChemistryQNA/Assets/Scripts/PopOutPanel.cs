@@ -40,6 +40,7 @@ public class PopOutPanel : MonoBehaviour
         if (rng == 0)
         {
             luckyPanel.SetActive(true);
+            //RightAnswer();
             Time.timeScale = 0f;
             Debug.Log("Lucky");
         }

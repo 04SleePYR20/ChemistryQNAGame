@@ -75,7 +75,7 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = clipToPlay;
             musicSource.Play();
         }
-        else
+        else if(!musicSource.isPlaying && clipToPlay != null)
         {
             // If no valid clip is found, stop playing music
             musicSource.Stop();
