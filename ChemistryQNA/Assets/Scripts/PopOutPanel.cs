@@ -10,6 +10,13 @@ public class PopOutPanel : MonoBehaviour
     public GameObject unluckyPanel;
     public GameObject luckyPanel;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -31,6 +38,11 @@ public class PopOutPanel : MonoBehaviour
 
         panel.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void WrongAnswer()
+    {
+        audioManager.PlaySFX(audioManager.wrongAnswer);
     }
 
     public void yoloChoice()

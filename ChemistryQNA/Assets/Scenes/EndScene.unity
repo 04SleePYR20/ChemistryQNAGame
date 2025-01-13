@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 494665550}
   - component: {fileID: 494665549}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Credit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -603,11 +603,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Game Over.\nThanks for Playing\nCredit:\nGame Design:       RYAN WONG
-    ZE XI(100908)\r\n\r\nGame Questions: BRIAN SONG ZI XIANG 98370\r\n                               
-    RYONS WONG LIENG ZHI 85584\r\n\r\nGame Music:         RYAN WONG ZE XI(100908)\r\n\r\nReport: 
-    IRFAN NABIL BIN MOHD IKRAM 97456                                \r\n                        
-    MUHAMMAD IZZAT AIMAN BIN HAMDEN 99950\r\n\r\nGame Manual:      IRFAN NABIL BIN
-    MOHD IKRAM 97456                                \r\n"
+    ZE XI 100908\r\n\r\nGame Questions: BRIAN SONG ZI XIANG 98370\r\n                               
+    RYONS WONG LIENG ZHI 85584\r\n\r\nGame Music:         RYAN WONG ZE XI 100908
+    \r\n\r\nReport:  IRFAN NABIL BIN MOHD IKRAM 97456                               
+    \r\n                         MUHAMMAD IZZAT AIMAN BIN HAMDEN 99950\r\n\r\nGame
+    Manual:      IRFAN NABIL BIN MOHD IKRAM 97456                               
+    \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -851,6 +852,7 @@ MonoBehaviour:
   mainMenuMusic: {fileID: 8300000, guid: ad92ed030424221479cbea94c801ea42, type: 3}
   levelMusic: {fileID: 8300000, guid: 1ab877277a4be3c45b7dbaa47d915806, type: 3}
   endGameMusic: {fileID: 8300000, guid: 0ea624fba2005994eb85f8465630ad55, type: 3}
+  wrongAnswer: {fileID: 8300000, guid: 49465628c1659f744b86d140f42fffaa, type: 3}
 --- !u!4 &715540422
 Transform:
   m_ObjectHideFlags: 0

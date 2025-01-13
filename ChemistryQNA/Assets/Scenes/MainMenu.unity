@@ -775,6 +775,7 @@ MonoBehaviour:
   mainMenuMusic: {fileID: 8300000, guid: ad92ed030424221479cbea94c801ea42, type: 3}
   levelMusic: {fileID: 8300000, guid: 1ab877277a4be3c45b7dbaa47d915806, type: 3}
   endGameMusic: {fileID: 8300000, guid: 0ea624fba2005994eb85f8465630ad55, type: 3}
+  wrongAnswer: {fileID: 8300000, guid: 49465628c1659f744b86d140f42fffaa, type: 3}
 --- !u!4 &1347258947
 Transform:
   m_ObjectHideFlags: 0

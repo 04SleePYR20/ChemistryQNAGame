@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
     [Header("Audio Source")]
-    [SerializeField] public AudioSource musicSource;
-    [SerializeField] public AudioSource SFXSource;
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource SFXSource;
 
     [Header("Audio Clips")]
-    [SerializeField] AudioClip mainMenuMusic;
-    [SerializeField] AudioClip levelMusic;
-    [SerializeField] AudioClip endGameMusic;
+    [SerializeField] public AudioClip mainMenuMusic;
+    [SerializeField] public AudioClip levelMusic;
+    [SerializeField] public AudioClip endGameMusic;
+    [SerializeField] public AudioClip wrongAnswer;
 
     public static AudioManager instance;
 
