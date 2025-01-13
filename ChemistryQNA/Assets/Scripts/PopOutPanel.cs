@@ -7,13 +7,15 @@ public class PopOutPanel : MonoBehaviour
 {
     public GameObject panel;
     public GameObject[] objectsToDestroy;
+    public GameObject unluckyPanel;
+    public GameObject luckyPanel;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             panel.SetActive(true);
-            Time.timeScale = 0f; 
+            Time.timeScale = 0f;
         }
     }
 
@@ -37,12 +39,14 @@ public class PopOutPanel : MonoBehaviour
 
         if (rng == 0)
         {
-            RightAnswer();
+            luckyPanel.SetActive(true);
+            Time.timeScale = 0f;
             Debug.Log("Lucky");
         }
         else
         {
-            RestartLevel();
+            unluckyPanel.SetActive(true); 
+            Time.timeScale = 0f; 
             Debug.Log("Unlucky");
         }
     }
